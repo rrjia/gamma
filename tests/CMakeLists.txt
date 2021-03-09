@@ -7,7 +7,7 @@ include_directories(../)
 # gtest
 if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/gtest")
     execute_process(COMMAND rm -rf gtest WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-    execute_process(COMMAND wget https://github.com/google/googletest/archive/release-1.8.1.tar.gz WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+    execute_process(COMMAND wget https://github.com/google/googletest/archive/release-1.8.1.tar.gz --no-check-certificate WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
     execute_process(COMMAND tar xf release-1.8.1.tar.gz WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
     execute_process(COMMAND mv googletest-release-1.8.1/googletest gtest WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
     execute_process(COMMAND rm -rf googletest-release-1.8.1 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
